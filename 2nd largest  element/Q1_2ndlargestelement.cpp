@@ -8,15 +8,19 @@ the task is to find second largest distinct element in the array.*/
 #include<iostream>
 using namespace std;
 int main(){
-    int num[]={12,35,1,10,34,1};
+    int num[] ={1,14,2,16,10,20};
+    int max = 0;
+    int smax=0;
     int size;
-    int max=0;
     size = sizeof(num)/sizeof(num[0]);
     for(int i=0;i<size;i++){
-        if(num[i]>max){
-            max = num[i];
-
-        }
+            if(num[i]>max){
+                max = num[i];
+            }
     }
-    cout<<max;
+    for(int j=0;j<size;j++){
+        if(num[j]>smax && num[j]!=max){
+            smax = num[j];
+        }
+    }cout<<smax;
 }
